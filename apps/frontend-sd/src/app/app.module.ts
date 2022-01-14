@@ -16,7 +16,7 @@ import { SidebarComponent } from './_shared/sidebar/sidebar.component';
 import { ChartdoughnutComponent } from './_shared/chartdoughnut/chartdoughnut.component';
 import { ChartbarComponent } from './_shared/chartbar/chartbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material/material.module'
+import { MaterialModule } from './material/material.module';
 import { NgChartsModule } from 'ng2-charts';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -34,6 +34,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
+import { EditStudentComponent } from './edit-student/edit-student.component';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -42,29 +43,64 @@ FullCalendarModule.registerPlugins([
   interactionPlugin,
 ]);
 
-const routes : Routes=[
-  {path:'', redirectTo:'/dashboard', pathMatch:'full'},
-  {path:'dashboard', component:DashboardComponent},
-  {path:'addparent', component:AddParentComponent},
-  {path:'addstudent', component:AddStudentComponent},
-  {path:'addteacher', component:AddTeacherComponent},
-  {path:'addclass', component:AddClassComponent},
-  {path:'student', component:StudentComponent},
-  {path:'teacher', component:TeacherComponent},
-  {path:'parent', component:ParentComponent},
-  {path:'class', component:ClassComponent},
-  {path:'subject', component:SubjectComponent},
-  {path:'studentdetails/:idStudent', component:DetailsStudentComponent},
-  {path:'teacherdetails', component:DetailsTeacherComponent},
-  {path:'parentdetails', component:DetailsParentComponent},
-  {path:'schedule', component:CalendarComponent},
+const routes: Routes = [
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'addparent', component: AddParentComponent },
+  { path: 'addstudent', component: AddStudentComponent },
+  { path: 'addteacher', component: AddTeacherComponent },
+  { path: 'addclass', component: AddClassComponent },
+  { path: 'student', component: StudentComponent },
+  { path: 'teacher', component: TeacherComponent },
+  { path: 'parent', component: ParentComponent },
+  { path: 'class', component: ClassComponent },
+  { path: 'subject', component: SubjectComponent },
+  { path: 'studentdetails/:idStudent', component: DetailsStudentComponent },
+  { path: 'studentedit/:idStudent', component: EditStudentComponent },
+  { path: 'teacherdetails', component: DetailsTeacherComponent },
+  { path: 'parentdetails', component: DetailsParentComponent },
+  { path: 'schedule', component: CalendarComponent },
 
-  {path:'**', component:NotfoundComponent}
-]
+  { path: '**', component: NotfoundComponent },
+];
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent, AddStudentComponent, AddTeacherComponent, AddParentComponent, ParentComponent, StudentComponent, TeacherComponent, DashboardComponent, NotfoundComponent, SidebarComponent, ChartdoughnutComponent, ChartbarComponent, DetailsStudentComponent, DetailsTeacherComponent, DetailsParentComponent, ClassComponent, AddClassComponent, SubjectComponent, AddScheduleComponent, InfoComponent, CalendarComponent ],
-  imports: [BrowserModule, RouterModule.forRoot(routes), BrowserAnimationsModule, MaterialModule, NgChartsModule, ReactiveFormsModule, FormsModule, HttpClientModule, FullCalendarModule,],
+  declarations: [
+    AppComponent,
+    NxWelcomeComponent,
+    AddStudentComponent,
+    AddTeacherComponent,
+    AddParentComponent,
+    ParentComponent,
+    StudentComponent,
+    TeacherComponent,
+    DashboardComponent,
+    NotfoundComponent,
+    SidebarComponent,
+    ChartdoughnutComponent,
+    ChartbarComponent,
+    DetailsStudentComponent,
+    DetailsTeacherComponent,
+    DetailsParentComponent,
+    ClassComponent,
+    AddClassComponent,
+    SubjectComponent,
+    AddScheduleComponent,
+    InfoComponent,
+    CalendarComponent,
+    EditStudentComponent,
+  ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule,
+    MaterialModule,
+    NgChartsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    FullCalendarModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

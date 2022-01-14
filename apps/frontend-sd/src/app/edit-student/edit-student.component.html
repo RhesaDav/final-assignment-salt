@@ -1,0 +1,72 @@
+<form [formGroup]="form">
+  <div>
+    <label>Year Academic</label>
+    <input formControlName="year_academic" name="year_academic" />
+  </div>
+  <div>
+    <label>First Name</label>
+    <input formControlName="first_name" name="first_name" />
+  </div>
+  <div>
+    <label>Last Name</label>
+    <input formControlName="last_name" name="last_name" />
+  </div>
+  <div>
+    <label>Gender</label>
+    <input formControlName="gender" name="gender" />
+  </div>
+  <div>
+    <label>Father Name</label>
+    <input formControlName="father_name" name="father_name" />
+  </div>
+  <div>
+    <label>Mother Name</label>
+    <input formControlName="mother_name" name="mother_name" />
+  </div>
+  <div>
+    <label>Date Of Birth</label>
+    <input formControlName="date_of_birth" name="date_of_birth" />
+  </div>
+  <div>
+    <label>Father Occupation</label>
+    <input formControlName="father_occupation" name="father_occupation" />
+  </div>
+  <div>
+    <label>Blood Group</label>
+    <input formControlName="blood_group" name="blood_group" />
+  </div>
+  <div>
+    <label>Relligion</label>
+    <input formControlName="religion" name="religion" />
+  </div>
+  <div>
+    <label>Addmission Date</label>
+    <input formControlName="addmission_date" name="addmission_date" />
+  </div>
+  <div>
+    <label>Class</label>
+    <input formControlName="kelas" name="kelas" />
+  </div>
+  <div>
+    <label>Address</label>
+    <input formControlName="address" name="address" />
+  </div>
+  <div>
+    <label>Phone</label>
+    <input formControlName="phone" name="phone" />
+  </div>
+  <div>
+    <label>Short Bio</label>
+    <input formControlName="short_bio" name="short_bio" />
+  </div>
+  <div>
+    <label>Status</label>
+    <input formControlName="status_siswa" name="status_siswa" />
+  </div>
+  <div>
+    <label>Image</label>
+    <input formControlName="image" name="image" />
+  </div>
+</form>
+
+<button mat-raised-button (click)="editSiswa()">Edit Student Data</button>
