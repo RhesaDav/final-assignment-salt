@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Student } from '../_models/student';
 import { StudentService } from '../_service/student.service';
 
+
+// a
 @Component({
   selector: 'app-details-student',
   templateUrl: './details-student.component.html',
