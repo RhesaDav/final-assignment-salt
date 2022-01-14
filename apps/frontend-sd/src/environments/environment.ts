@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  port : 'https://1448-36-70-208-198.ngrok.io'
 };
 
 /*

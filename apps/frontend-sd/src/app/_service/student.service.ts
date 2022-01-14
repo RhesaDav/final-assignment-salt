@@ -1,0 +1,35 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import {environment} from '../../environments/environment'
+import {Student} from '../_models/student'
+
+const port = environment.port
+
+@Injectable({
+  providedIn: 'root'
+})
+export class StudentService {
+
+  constructor(private http: HttpClient) { }
+  
+  AddStudent(data:any):Observable<any>{
+    console.log('data:', data)
+    return this.http.post<any>(`${port}/api/student/register`, data)
+  }
+  getTotalStudent():Observable<any>{
+    return this.http.get<any>(`${port}/api/student/count`)
+  }
+  getAllStudent():Observable<any>{
+    return this.http.get<any>(`${port}/api/student`)
+  }
+  getMaleStudent():Observable<any>{
+    return this.http.get<any>(`${port}/api/student/totalMale`)
+  }
+  getFemaleStudent():Observable<any>{
+    return this.http.get<any>(`${port}/api/student/totalFemale`)
+  }
+  getStudentById(id:any):Observable<Student>{
+    return this.http.get<Student>(`${port}/api/student/${id}`)
+  }
+}

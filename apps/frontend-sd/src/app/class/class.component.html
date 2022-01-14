@@ -1,0 +1,42 @@
+<mat-tab-group>
+    <mat-tab label="All Students">
+        <div class="title">
+            <div class="head"><p>All Student</p></div>
+        </div>
+        <div class="route">
+            <p>Home <span> > All Student</span></p>
+        </div>
+        <div class="container-table">
+            <table>
+                <tr class="header">
+                    <th>
+                        <p>Id</p>
+                    </th>
+                    <th>
+                        <p>Kelas</p>
+                    </th>
+                    <th>
+                        <p>Teacher</p>
+                    </th>
+                    <th>
+                        <p>subject</p>
+                    </th>
+                    <th>
+                        <p>Email</p>
+                    </th>
+                    <th>
+                        <p>phone</p>
+                    </th>
+                </tr>
+                <tr *ngFor="let data of kelas">
+                    <td><p>{{data.id}}</p></td>
+                    <td><p>{{data.class_name}}</p></td>
+                    <td><p>{{data.teacher.first_name}} {{data.teacher.last_name}}</p></td>
+                    <td><p *ngFor="let data of subject">{{data.subject_name}}</p></td>
+                    <td><p>{{data.teacher.email}}</p></td>
+                    <td><p>{{data.teacher.phone}}</p></td>
+                </tr>
+            </table>
+        </div>
+    </mat-tab>
+</mat-tab-group>

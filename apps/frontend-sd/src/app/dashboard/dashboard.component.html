@@ -1,0 +1,38 @@
+
+<div class="container vh-100 d-inline-block">
+    <div class="title">
+        <div class="head">
+            <p>Head Master Dashboard</p>
+        </div>
+    </div>
+    <div class="route">
+        <p>Home <span> > Add New Class</span></p>
+    </div>
+    <div class="list-box">
+        <div class="box">
+            <div class="logo"><img src="/assets/icon/student.png" alt=""></div>
+            <div class="name-amount">
+                <p>Students</p>
+                <p>{{totalStudent}}</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="logo"><img src="/assets/icon/female.png" alt=""></div>
+            <div class="name-amount">
+                <p>Teachers</p>
+                <p>{{totalTeacher}}</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="logo"><img src="/assets/icon/parents.png" alt=""></div>
+            <div class="name-amount">
+                <p>Parents</p>
+                <p>{{totalParent}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-charts">
+        <app-chartdoughnut></app-chartdoughnut>
+        <app-chartbar></app-chartbar>
+    </div>
+</div>

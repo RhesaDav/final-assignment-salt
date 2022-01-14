@@ -1,0 +1,75 @@
+<mat-tab-group>
+    <mat-tab label="Add Teacher">
+        <div class="title"><p>Teacher</p></div>
+        <div class="route"><p>Home <span> > Add New Teacher</span></p></div>
+        <div class="container">
+            <form [formGroup]="form!">
+                <div class="name-form"><p>Add New Student</p></div>
+                <div class="mb-3">
+                    <label  for="exampleFormControlInput1" class="form-label">First Name</label>
+                    <input formControlName="first_name" type="text" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+                    <input formControlName="last_name" type="text" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Date of Birth</label>
+                    <input formControlName="date_of_birth" type="date" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Addmission Date</label>
+                    <input formControlName="addmission_date" type="date" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Religion</label>
+                    <input formControlName="religion" type="text" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Blood Group</label>
+                    <input formControlName="blood_group" type="text" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Short Bio</label>
+                    <input formControlName="short_bio" type="text" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Role</label>
+                    <input formControlName="role" type="text" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">E-mail</label>
+                    <input formControlName="email" type="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@example.com">
+                </div>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-select formControlName="gender" [(value)]="genderType">
+                            <mat-label>Gender</mat-label>
+                            <mat-option value="Male" >Male</mat-option>
+                            <mat-option value="Female">Female</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Phone</label>
+                    <input formControlName="phone" type="text" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Address</label>
+                    <input formControlName="address" type="text" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div>
+                    <img [src]="imageDisplay" alt="">
+                </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Upload Teacher Photo</label>
+                    <input class="form-control" type="file" id="formFile" accept="image/*" (change)="uploadImage($event)">
+                </div>
+                <button class="save" (click)="submitData()"><p>Save</p></button>
+                <button class="reset" ><p>Reset</p></button>
+            </form>
+        </div>
+
+    </mat-tab>
+</mat-tab-group>
