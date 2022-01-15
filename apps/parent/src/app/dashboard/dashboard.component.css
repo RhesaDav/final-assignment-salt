@@ -1,0 +1,278 @@
+.head p {
+    font-size: 30px;
+    font-weight: 400;
+}
+.head-profil {
+    margin: 26px 0;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.title-profil {
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 18px;
+    margin-left: 35px;
+}
+.route-profil {
+    font-size: 15px;
+    margin-top: 25px;
+    margin-left: 40px;
+    margin-bottom: 50px;
+}
+span {
+    color: #cd3a0e;
+}
+.container-charts {
+    align-items: center;
+    display: flex;
+    margin-top: 43px;
+    justify-content: space-between;
+    height: auto;
+    background: white;
+    padding: 0 20vh;
+    box-shadow: 2px 2px rgb(197, 197, 197);
+}
+@media (min-width: 1200px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+/* bio */
+/* 
+.container-profil {
+    border-radius: 10px;
+    background: aliceblue;
+}
+.name-con {
+    display: flex;
+    align-items: flex-end;
+}
+.title2 {
+    height: 100%;
+    font-size: 18px;
+}
+.title {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 18px;
+    margin-left: 35px;
+    width: 37vh;
+    color: #000000a1;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+    border-radius: 100%;
+    width: 190px;
+    height: 190px;
+}
+.header-profil {
+    font-size: 30px;
+    letter-spacing: 5px;
+    margin: 36px 25px;
+    font-weight: 500;
+}
+.Name {
+    margin-left: 60px;
+    font-size: 20px;
+    letter-spacing: 6px;
+    font-family: inherit;
+    font-weight: 100;
+}
+.container-prrofil {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.profil-photo {
+    margin-left: 55px;
+    margin-top: 20px;
+}
+.container-kid{
+    border: 1px solid #0000000f;
+    background: #bde8ef2e;
+    width: 535px;
+    border-radius: 7px;
+    margin-top: 20px;
+}
+table {
+    margin-top: 50px;
+    overflow: none;
+    margin: 0 auto;
+}
+table th {
+    padding: 0 92px;
+}
+.container-table-grade {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    margin-top: 46px;
+}
+.title-grade {
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 18px;
+    margin-left: 35px;
+}
+.route-grade {
+    font-size: 15px;
+    margin-top: 25px;
+    margin-left: 40px;
+}
+span {
+    color: #cd3a0e;
+}
+.name-form {
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 28px;
+    margin-top: 70px;
+    margin-left: 100px;
+}
+.box-form {
+    border: 1px solid;
+    width: 90%;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 11px;
+}
+li {
+    list-style: none;
+}
+input[type="text"] {
+    margin: 0 45px;
+}
+input[type="date"] {
+    margin: 0 53px;
+}
+select {
+    margin: 0 38px;
+}
+input[type="date"].form-control {
+    margin-left: 0;
+}
+form {
+    width: 70%;
+    margin: 0 auto;
+}
+.gender span {
+    color: #212529;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+}
+.container-grade {
+    border: 1px solid #0000004f;
+    height: 70vh;
+    border-radius: 10px;
+    background: aliceblue;
+}
+td{
+    color: #000000ab;
+    letter-spacing: 2px;
+}
+.head-grade{
+    margin: 26px 0;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+.my-kid{
+    border: 1px solid red;
+} */
+.container-kid{
+    background: #ffff;
+    border: 1px solid #a5a5a5;
+    border-radius: 10px;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+.student-data{
+    border: 1px solid #a5a5a5;
+    background: #e2f0f7;
+    border-radius: 10px;
+    margin: 20px 0;
+
+}  
+.student-schedule{
+    border: 1px solid #a5a5a5;
+    background: #e2f0f7;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+.container-profil{
+    display: flex;
+    align-items: center;
+}
+.profil-photo img{
+    height: 165px;
+    border-radius: 100%;
+}
+.profil-photo {
+    margin: 20px 10px;
+}
+.name-con {
+    display: flex;
+}
+.title {
+    width: 185px;
+}
+.title2{
+    font-size: 25px;
+    font-weight: 500;
+}
+.name-con{
+    font-size: 26px;
+    font-weight: 100;
+    margin: 53px auto;
+    width: 379px;
+}
+.Name{
+    height: 100%;
+    font-size: 25px;
+    letter-spacing: 5px;
+    margin: 0 30px;
+    width: 205px;
+}
+.data-profil{
+    margin: 0 auto;
+}
+/* schedule */
+table {
+    margin-top: 50px;
+    overflow: none;
+    margin: 0 auto;
+}
+table th {
+    /* border-bottom: 1px solid black; */
+    padding: 0 38px;
+}
+.container-table-grade {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    margin-top: 46px;
+}
+.title-grade {
+    width: max-content;
+    margin: 20px auto;
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+.title-kid {
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin: 20px;
+}

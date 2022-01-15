@@ -35,6 +35,8 @@ import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import { EditStudentComponent } from './edit-student/edit-student.component';
+import { EditTeacherComponent } from './edit-teacher/edit-teacher.component';
+import { EditParentComponent } from './edit-parent/edit-parent.component';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -89,6 +91,8 @@ const routes: Routes = [
     InfoComponent,
     CalendarComponent,
     EditStudentComponent,
+    EditTeacherComponent,
+    EditParentComponent,
   ],
   imports: [
     BrowserModule,

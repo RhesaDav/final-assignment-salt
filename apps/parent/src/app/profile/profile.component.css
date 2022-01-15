@@ -1,0 +1,174 @@
+.container{
+    border: 1px solid #a5a5a5;
+    background: #ffff;
+    display: flex;
+}
+.profil{
+    width:max-content;
+}
+.head p {
+    font-size: 30px;
+    font-weight: 400;
+}
+.head-profil {
+    margin: 26px 0;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.title-profil {
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 18px;
+    margin-left: 35px;
+}
+.route-profil {
+    font-size: 15px;
+    margin-top: 25px;
+    margin-left: 40px;
+    margin-bottom: 50px;
+}
+span {
+    color: #cd3a0e;
+}
+.container-charts {
+    align-items: center;
+    display: flex;
+    margin-top: 43px;
+    justify-content: space-between;
+    height: auto;
+    background: white;
+    padding: 0 20vh;
+    box-shadow: 2px 2px rgb(197, 197, 197);
+}
+@media (min-width: 1200px) {
+    .container {
+        max-width: 100%;
+    }
+}
+.header-bio{
+    display: flex;
+    align-items: center;
+}
+.name{
+    height: max-content;
+    width: 300px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-family: revert;
+}
+
+img {
+    border-radius: 100%;
+    height: 135px;
+}
+.photo{
+    margin: 20px;
+}
+.name-con{
+    display: flex;
+    margin: 20px 0px;
+}
+
+.bio{
+    width: max-content;
+    border: 1px solid #a5a5a5;
+    border-radius: 10px;
+    background: #e2f0f7;
+    margin: 20px;
+}
+.data-bio{
+    margin: 20px;
+    width: max-content;
+    margin: 0 auto;
+}
+.title {
+    width: 280px;
+    font-size: 22px;
+    font-weight: 200;
+    color: #000000a6;
+}
+.title1 {
+    width: 280px;
+    font-size: 22px;
+    font-weight: 200;
+    color: #000000a6;
+}
+.title2 {
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 0px;
+}
+.title-parent {
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin: 20px;
+}
+.container-myKid{
+    width: 100%;
+}
+.profil-myKid {
+    border: 1px solid #a5a5a5;
+    width: max-content;
+    margin: 0 auto;
+    border-radius: 10px;
+    background: #e2f0f7;
+    margin-bottom: 20px;
+}
+
+.name-kid {
+    font-size: 35px;
+    width: 538px;
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: 500;
+}
+.title-kid {
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    width: 714px;
+    margin: 20px auto;
+}
+.edit {
+    float: right;
+    margin: 20px;
+    font-size: 25px;
+    ont-weight: 500;
+}
+.edit:hover{
+    cursor: pointer;
+}
+.edit .dropdown{
+    display: none;
+}
+.edit:hover .dropdown{
+    display: block;
+    position: absolute;
+}
+.edit ul li{
+    list-style: none;
+    margin: 25px 5px;
+}
+.edit ul{
+    border: 1px solid #a5a5a5 ;
+    background: #ffff;
+    box-shadow: 2px 2px grey;
+    border-radius: 10px;
+}
+span.logo1 {
+    color: red;
+}
+span.logo2 {
+    color: orange;
+}
+span.logo3 {
+    color: green;
+}
+.bio span{
+    margin-right: 10px;
+}
