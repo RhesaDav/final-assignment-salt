@@ -63,10 +63,33 @@
     <label>Status</label>
     <input formControlName="status_siswa" name="status_siswa" />
   </div>
-  <div>
-    <label>Image</label>
-    <input formControlName="image" name="image" />
-  </div>
 </form>
 
 <button mat-raised-button (click)="editSiswa()">Edit Student Data</button>
+
+<div>
+  <label>Image</label>
+  <img
+    [src]="imageDisplay ? imageDisplay : imageStudent"
+    alt=""
+    style="width: 200px"
+  />
+</div>
+
+<form [formGroup]="formImage">
+  <!-- <div>
+    <img [src]="imageDisplay" alt="" />
+  </div> -->
+  <div class="mb-3">
+    <label for="formFile" class="form-label">Edit Student Image</label>
+    <input
+      class="form-control"
+      type="file"
+      id="formFile"
+      accept="image/*"
+      (change)="editImage($event)"
+    />
+  </div>
+</form>
+
+<button mat-raised-button (click)="submitImage()">Update Image</button>

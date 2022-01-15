@@ -14,6 +14,8 @@ import { StudentService } from '../_service/student.service';
 })
 export class EditStudentComponent implements OnInit {
   form!: FormGroup;
+  formImage!: FormGroup;
+
   constructor(
     private formBuilder: FormBuilder,
     private studentService: StudentService,
@@ -22,6 +24,8 @@ export class EditStudentComponent implements OnInit {
   ) {}
   idStudent: any;
   idKelas: any;
+  imageStudent: any;
+  imageDisplay: any;
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.idStudent = [params['idStudent']];
@@ -29,6 +33,7 @@ export class EditStudentComponent implements OnInit {
     });
 
     this._studentInit();
+    this._studentImageInit();
     this.studentEditForm(this.idStudent[0]);
   }
 
@@ -51,11 +56,18 @@ export class EditStudentComponent implements OnInit {
       phone: ['', Validators.required],
       short_bio: ['', Validators.required],
       status_siswa: ['', Validators.required],
+    });
+  }
+  private _studentImageInit() {
+    this.formImage = this.formBuilder.group({
       image: ['', Validators.required],
     });
   }
+
   private studentEditForm(id: any) {
     this.studentService.getStudentById(id).subscribe((res) => {
+      this.imageStudent = res.image;
+      console.log('LInk Gambar : ', this.imageStudent);
       this.studentForm['year_academic'].setValue(res.year_academic);
       this.studentForm['first_name'].setValue(res.first_name);
       this.studentForm['last_name'].setValue(res.last_name);
@@ -72,11 +84,22 @@ export class EditStudentComponent implements OnInit {
       this.studentForm['address'].setValue(res.address);
       this.studentForm['phone'].setValue(res.phone);
       this.studentForm['short_bio'].setValue(res.short_bio);
-      this.studentForm['image'].setValue(res.image);
       this.studentForm['status_siswa'].setValue(res.status);
     });
   }
 
+  editImage(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      this.formImage.patchValue({ image: file });
+      this.formImage.get('image')?.updateValueAndValidity();
+      const fileReader = new FileReader();
+      fileReader.onload = () => {
+        this.imageDisplay = fileReader.result;
+      };
+      fileReader.readAsDataURL(file);
+    }
+  }
   editSiswa() {
     this.kelasService.getAllClass().subscribe((res) => {
       res.forEach((el) => {
@@ -103,7 +126,6 @@ export class EditStudentComponent implements OnInit {
       phone: this.studentForm['phone'].value,
       short_bio: this.studentForm['short_bio'].value,
       status: this.studentForm['status_siswa'].value,
-      image: this.studentForm['image'].value,
     };
 
     this.studentService
@@ -113,7 +135,25 @@ export class EditStudentComponent implements OnInit {
       });
   }
 
+  submitImage() {
+    const imageStudent = new FormData();
+    Object.keys(this.imageForStudentForm).map((key) => {
+      imageStudent.append(key, this.imageForStudentForm[key].value);
+    });
+
+    console.log('TEST IMAGE : ', imageStudent);
+
+    this.studentService
+      .editStudentImageByHeadmaster(this.idStudent, imageStudent)
+      .subscribe((res) => {
+        console.log('Hasil : ', res);
+      });
+  }
+
   get studentForm() {
     return this.form.controls;
+  }
+  get imageForStudentForm() {
+    return this.formImage.controls;
   }
 }

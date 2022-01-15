@@ -35,4 +35,11 @@ export class StudentService {
   editStudentByHeadmaster(id: any, data: Student): Observable<any> {
     return this.http.put<any>(`${port}/api/student/byheadmaster/${id}`, data);
   }
+
+  editStudentImageByHeadmaster(id: any, data: any): Observable<any> {
+    return this.http.put<any>(
+      `${port}/api/student/byheadmaster/image/${id}`,
+      data
+    );
+  }
 }
