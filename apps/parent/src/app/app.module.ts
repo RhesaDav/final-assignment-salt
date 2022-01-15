@@ -14,7 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 const routes : Routes = [
   // {path:'', component:DashboardComponent},
   {path:'dashboard', component:DashboardComponent},
-  {path:'profile/:idParent', component:ProfileComponent}
+  {path:'profile/:idParent', component:ProfileComponent},
+  {path:'dashboard/:idParent', component:DashboardComponent}
 ];
 
 @NgModule({

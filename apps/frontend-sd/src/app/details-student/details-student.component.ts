@@ -56,6 +56,7 @@ export class DetailsStudentComponent implements OnInit {
           id: '',
         },
       ],
+      
     },
     address: '',
     phone: '',

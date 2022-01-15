@@ -105,13 +105,13 @@
                 </div>
             </div>
             <div class="container-data-bio">
-                <div class="data-bio">
+                <div class="data-bio" *ngFor= "let data of parentData.child">
                     <div class="name-con">
                         <div class="title1">
                             <p>Name :</p>
                         </div>
                         <div class="title2">
-                            <p>Jane</p>
+                            <p>{{data.first_name}}</p>
                         </div>
                     </div>
                     <div class="name-con">
@@ -119,7 +119,7 @@
                             <p>Gender :</p>
                         </div>
                         <div class="title2">
-                            <p>Female</p>
+                            <p>{{data.gender}}</p>
                         </div>
                     </div>
                     <div class="name-con">
@@ -127,7 +127,7 @@
                             <p>Date of birth :</p>
                         </div>
                         <div class="title2">
-                            <p>02/05/2003</p>
+                            <p>{{data.date_of_birth}}</p>
                         </div>
                     </div>
                     <div class="name-con">
@@ -135,7 +135,7 @@
                             <p>Religion :</p>
                         </div>
                         <div class="title2">
-                            <p>Islam</p>
+                            <p>{{data.religion}}</p>
                         </div>
                     </div>
                     <div class="name-con">
@@ -143,7 +143,7 @@
                             <p>Email :</p>
                         </div>
                         <div class="title2">
-                            <p>Jane@gmail.com</p>
+                            <p>{{data.email}}</p>
                         </div>
                     </div>
                     <div class="name-con">
@@ -151,7 +151,7 @@
                             <p>Class :</p>
                         </div>
                         <div class="title2">
-                            <p>2</p>
+                            <p>{{data.kelas}}</p>
                         </div>
                     </div>
                     <div class="name-con">
@@ -159,7 +159,7 @@
                             <p>Adress :</p>
                         </div>
                         <div class="title2">
-                            <p>Padang</p>
+                            <p>{{data.address}}</p>
                         </div>
                     </div>
                     <div class="name-con">
@@ -167,7 +167,7 @@
                             <p>Phone :</p>
                         </div>
                         <div class="title2">
-                            <p>08129292109</p>
+                            <p>{{data.phone}}</p>
                         </div>
                     </div>
                 </div>

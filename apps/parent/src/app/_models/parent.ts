@@ -10,4 +10,17 @@ export class parent {
     address? : string
     phone? : string
     gender? : string
+    child! : [{
+        first_name? : string
+        last_name? : string
+        gender? : string
+        date_of_birth? : string
+        religion? : string
+        email? : string
+        phone? : string
+        kelas? : {
+            class_name? : string
+        }
+        address?: string
+    }]
 }

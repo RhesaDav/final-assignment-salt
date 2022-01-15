@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { parent } from '../_models/parent';
@@ -23,7 +24,19 @@ export class ProfileComponent implements OnInit {
     religion: '',
     email: '',
     address: '',
-    phone: ''
+    phone: '',
+    child: [{
+      first_name: '',
+      last_name: '',
+      gender : '',
+      date_of_birth : '',
+      religion : '',
+      email : '',
+      phone : '',
+      kelas : {
+        class_name: ''
+      }
+    }]
   }
 
   idParent : any

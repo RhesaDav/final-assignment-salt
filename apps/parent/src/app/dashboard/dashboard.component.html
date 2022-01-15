@@ -10,103 +10,6 @@
     <div class="title-kid">
         <p>My Kids</p>
     </div>
-    <div class="container">
-        <div class="student-data">
-            <div class="my-kid">
-                <div class="container-profil">
-                    <div class="profil-photo"><img src="assets/icon/person.jpg" alt=""></div>
-                    <div class="Name">
-                        <p>Raisul Khairi</p>
-                    </div>
-                </div>
-                <div class="data-profil">
-                    <div class="name-con">
-                        <div class="title">
-                            <p>Name :</p>
-                        </div>
-                        <div class="title2">
-                            <p>Raisul Khairi</p>
-                        </div>
-                    </div>
-                    <div class="name-con">
-                        <div class="title">
-                            <p>Gender :</p>
-                        </div>
-                        <div class="title2">
-                            <p>Male</p>
-                        </div>
-                    </div>
-                    <div class="name-con">
-                        <div class="title">
-                            <p> Class :</p>
-                        </div>
-                        <div class="title2">
-                            <p>2</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="student-schedule">
-            <div class="container-grade">
-                <div class="title-grade">
-                    <p>Schedule</p>
-                </div>
-                <div class="container-table-grade">
-                    <table>
-                        <tr class="header">
-                            <th>
-                                <p>Id</p>
-                            </th>
-                            <th>
-                                <p>Subject</p>
-                            </th>
-                            <th>
-                                <p>Class</p>
-                            </th>
-                            <th>
-                                <p>Grade</p>
-                            </th>
-                            <th>
-                                <p>Percent</p>
-                            </th>
-                            <th>
-                                <p>Teacher</p>
-                            </th>
-                            <th>
-                                <p></p>
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>001</p>
-                            </td>
-                            <td>
-                                <p>English</p>
-                            </td>
-                            <td>
-                                <p>2</p>
-                            </td>
-                            <td>
-                                <p>90 </p>
-                            </td>
-                            <td>
-                                <p>ella</p>
-                            </td>
-                            <td>
-                                <p>ella</p>
-                            </td>
-                            <td>
-                                <div class="edit">
-                                    <p><a href="">...</a></p>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="container">
         <div class="student-data">
@@ -117,13 +20,13 @@
                         <p>Jane</p>
                     </div>
                 </div>
-                <div class="data-profil">
+                <div class="data-profil" *ngFor="let data of parentData.child">
                     <div class="name-con">
                         <div class="title">
                             <p>Name :</p>
                         </div>
                         <div class="title2">
-                            <p>Jane</p>
+                            <p>{{data.first_name}}</p>
                         </div>
                     </div>
                     <div class="name-con">
@@ -131,7 +34,7 @@
                             <p>Gender :</p>
                         </div>
                         <div class="title2">
-                            <p>Female</p>
+                            <p>{{data.gender}}</p>
                         </div>
                     </div>
                     <div class="name-con">
@@ -139,7 +42,7 @@
                             <p> Class :</p>
                         </div>
                         <div class="title2">
-                            <p>2</p>
+                            <p>{{data.kelas}}</p>
                         </div>
                     </div>
                 </div>
