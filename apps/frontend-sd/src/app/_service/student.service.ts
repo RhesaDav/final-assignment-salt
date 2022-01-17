@@ -42,4 +42,9 @@ export class StudentService {
       data
     );
   }
+
+  getAllStudentRelatedToTheClass(id:any): Observable<Student> {
+    return this.http.get<Student>(`${port}/api/student/getAllStudentRelatedToTheClass/${id}`)
+  }
+  
 }

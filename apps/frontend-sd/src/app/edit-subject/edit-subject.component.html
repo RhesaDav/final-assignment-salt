@@ -1,0 +1,42 @@
+<form [formGroup]="form">
+    <div class="name-form"><p>Add New Subject</p></div>
+
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Subject Name</label
+      >
+      <input
+        formControlName="subject_name"
+        name="subject_name"
+        type="text"
+        class="form-control"
+      />
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >duration</label
+        >
+        <input
+          formControlName="duration"
+          name="duration"
+          type="text"
+          class="form-control"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >teacher</label
+        >
+        <input
+          formControlName="teacher_id"
+          name="teacher_id"
+          type="text"
+          class="form-control"
+        />
+      </div>
+
+    <button class="save" (click)="editSubject()"><p>Save</p></button>
+    <button class="reset"><p>Reset</p></button>
+  </form>

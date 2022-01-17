@@ -22,4 +22,6 @@ export class KelasServices {
     console.log('data:', data);
     return this.http.post<any>(`${port}/api/class`, data);
   }
+
+  
 }

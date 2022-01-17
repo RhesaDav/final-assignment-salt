@@ -1,1 +1,64 @@
-<p>edit-parent works!</p>
+<form [formGroup]="form">
+    <div>
+      <label>First Name</label>
+      <input formControlName="first_name" name="first_name" />
+    </div>
+    <div>
+      <label>Last Name</label>
+      <input formControlName="last_name" name="last_name" />
+    </div>
+    <div>
+      <label>Gender</label>
+      <input formControlName="gender" name="gender" />
+    </div>
+    <div>
+      <label>Blood Group</label>
+      <input formControlName="blood_group" name="blood_group" />
+    </div>
+    <div>
+      <label>Religion</label>
+      <input formControlName="religion" name="religion" />
+    </div>
+    <div>
+      <label>Address</label>
+      <input formControlName="address" name="address" />
+    </div>
+    <div>
+      <label>Phone</label>
+      <input formControlName="phone" name="phone" />
+    </div>
+    <div>
+      <label>Short Bio</label>
+      <input formControlName="short_bio" name="short_bio" />
+    </div>
+  </form>
+  
+  <button mat-raised-button (click)="editOrtu()">Edit Student Data</button>
+  
+  <div>
+    <label>Image</label>
+    <img
+      [src]="imageDisplay ? imageDisplay : imageParent"
+      alt=""
+      style="width: 200px"
+    />
+  </div>
+  
+  <form [formGroup]="formImage">
+    <!-- <div>
+      <img [src]="imageDisplay" alt="" />
+    </div> -->
+    <div class="mb-3">
+      <label for="formFile" class="form-label">Edit Parent Image</label>
+      <input
+        class="form-control"
+        type="file"
+        id="formFile"
+        accept="image/*"
+        (change)="editImage($event)"
+      />
+    </div>
+  </form>
+  
+  <button mat-raised-button (click)="submitImage()">Update Image</button>
+  

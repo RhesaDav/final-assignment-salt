@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { Teacher } from '../_models/teacher';
 
 const port = environment.port
 
@@ -21,6 +22,15 @@ export class TeacherService {
   }
   getAllTeacher():Observable<any[]>{
     return this.http.get<any[]>(`${port}/api/teacher`)
+  }
+  getTeacherById(id: any): Observable<Teacher> {
+    return this.http.get<Teacher>(`${port}/api/student/${id}`);
+  }
+  editTeacherByHeadmaster(id: any, data: Teacher): Observable<any> {
+    return this.http.put<any>(`${port}/api/byheadmaster/${id}`, data)
+  }
+  editTeacherImageByHeadmaster(id: any, data: any): Observable<any> {
+    return this.http.put<any>(`${port}/api/teacher/image/${id}`, data)
   }
   
 }

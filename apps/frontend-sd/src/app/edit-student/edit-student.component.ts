@@ -16,6 +16,7 @@ export class EditStudentComponent implements OnInit {
   form!: FormGroup;
   formImage!: FormGroup;
 
+
   constructor(
     private formBuilder: FormBuilder,
     private studentService: StudentService,

@@ -37,6 +37,8 @@ import listPlugin from '@fullcalendar/list';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { EditTeacherComponent } from './edit-teacher/edit-teacher.component';
 import { EditParentComponent } from './edit-parent/edit-parent.component';
+import { EditSubjectComponent } from './edit-subject/edit-subject.component';
+import { AcademicYearComponent } from './academic-year/academic-year.component';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -60,8 +62,12 @@ const routes: Routes = [
   { path: 'studentdetails/:idStudent', component: DetailsStudentComponent },
   { path: 'studentedit/:idStudent', component: EditStudentComponent },
   { path: 'teacherdetails', component: DetailsTeacherComponent },
+  { path: 'studentedit/:idTeacher', component: EditTeacherComponent },
   { path: 'parentdetails', component: DetailsParentComponent },
+  { path: 'parentedit/:idParent', component: EditParentComponent },
+  { path: 'subject/:idSubject', component: EditSubjectComponent },
   { path: 'schedule', component: CalendarComponent },
+  { path: 'academicyear', component:AcademicYearComponent},
 
   { path: '**', component: NotfoundComponent },
 ];
@@ -93,6 +99,8 @@ const routes: Routes = [
     EditStudentComponent,
     EditTeacherComponent,
     EditParentComponent,
+    EditSubjectComponent,
+    AcademicYearComponent,
   ],
   imports: [
     BrowserModule,
