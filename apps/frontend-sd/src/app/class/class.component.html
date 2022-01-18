@@ -59,20 +59,21 @@
         <mat-tab label="{{data.class_name}}" >
             
             <table>
-                <thead>
-                  <tr *ngFor="let data of student[0].subject">
-                    <th> </th>
-                    <th>{{data.subject_name.subject_namedd}}</th>
+                <tbody >
+                  <tr *ngFor="let data of student">
+                    <td>{{data.subject.subject_name}}</td>
+              
+                    <td>{{data.first_name}}</td>
                   </tr>
-                </thead>
-                <tbody>
+                </tbody>
+                <!-- <tbody>
                   <tr>
                     <th>Lily</th>
                     <td>60</td>
                     <td>70</td>
                     <td>80</td>
                   </tr>
-                </tbody>
+                </tbody> -->
               </table>
         </mat-tab>
     </mat-tab>
@@ -85,18 +86,14 @@
       <table>
         <thead>
           <tr>
-            <th> </th>
-            <th>Math</th>
-            <th>History</th>
-            <th>Math</th>
+            <th>Nama</th>
+            <th>Skor</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th>Lily</th>
-            <td>60</td>
-            <td>70</td>
-            <td>80</td>
+          <tr *ngFor="let data of student">
+            <td>{{data.first_name}}</td>
+            <td>{{data.totalScore}}</td>
           </tr>
         </tbody>
       </table>

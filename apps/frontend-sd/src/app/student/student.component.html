@@ -8,7 +8,7 @@
         </div>
         <div class="container-table">
             <table>
-                <tr class="header">
+                <tr class="header" >
                     <th>
                         <p>Id</p>
                     </th>
@@ -25,24 +25,19 @@
                         <p>Class</p>
                     </th>
                     <th>
-                        <p>Address</p>
-                    </th>
-                    <th>
-                        <p>Phone</p>
-                    </th>
-                    <th>
-                        <p>E mail</p>
+                        <p>Action</p>
                     </th>
                 </tr>
-                <tr *ngFor="let data of students">
+                <tr *ngFor="let data of students" mat>
                     <td><p>{{data.id}}</p></td>
                     <td><p><img src="{{data.image}}" alt="" width="50" height="50"></p></td>
                     <td><p>{{data.first_name}} {{data.last_name}}</p></td>
                     <td><p>{{data.gender}}</p></td>
                     <td><p>{{data.kelas.class_name}}</p></td>
-                    <td><p>{{data.address}}</p></td>
+                    <td><button>Edit</button><button>Delete</button></td>
+                    <!-- <td><p>{{data.address}}</p></td>
                     <td><p>{{data.phone}}</p></td>
-                    <td><p>{{data.email}}</p></td>
+                    <td><p>{{data.email}}</p></td> -->
                 </tr>
             </table>
         </div>

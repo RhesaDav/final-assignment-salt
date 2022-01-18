@@ -59,4 +59,5 @@ export class Student {
     }
   ];
   id?: string;
+  totalScore?: string;
 }
