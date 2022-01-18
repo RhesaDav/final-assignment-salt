@@ -1,25 +1,31 @@
 <mat-sidenav-container class="d-md-block side-navbar">
     <mat-sidenav #sidenav opened mode="side">
         <div class="title">
-            <div class="logo"> <i class="fa  fa-graduation-cap fa-1x" aria-hidden="true"></i></div>
-            <div class="name">
+            <div class="logo"> <img src="https://1.bp.blogspot.com/-xIkvr4n2wEI/YNar8NwrMzI/AAAAAAAAFjM/2ThacZ35jXsa3fzsFgUvPgGX4uTQCR7dgCLcBGAsYHQ/512%2Blogo%2Bnew.png" width="150"></div>
+            <!-- <div class="name">
                 <p>SD SukaMaju</p>
-            </div>
+            </div> -->
         </div>
         <ul class="list nav">
             <li><a routerLink="dashboard" class="nav-link"><i class="fas dashboard fa-house-user"></i> Dashboard</a></li>
 
             <li><a (click)="showTeacher = !showTeacher" class="nav-link"><i class="fas fa-user-graduate"></i>Teacher</a></li>
-            <li><a *ngIf="showTeacher" routerLink="/teacher">Teacher List</a></li>
+            <div class="submenu">
+                <li><a *ngIf="showTeacher" routerLink="/teacher">Teacher List</a></li>
             <li><a *ngIf="showTeacher" routerLink="/addteacher"> Add Teacher</a></li>
+            </div>
 
             <li><a (click)="showStudent=!showStudent" class="nav-link"><i class="fas fa-users"></i> Student</a></li>
-            <li><a *ngIf="showStudent" routerLink="/student">Student List</a></li>
+            <div class="submenu">
+                <li><a *ngIf="showStudent" routerLink="/student">Student List</a></li>
             <li><a *ngIf="showStudent" routerLink="/addstudent"> Admission Form</a></li>
+            </div>
 
             <li><a (click)="showParent=!showParent" class="nav-link"><i class="fas fa-user-secret"></i>Parent</a></li>
-            <li><a *ngIf="showParent" routerLink="/parent">Parent List</a></li>
-            <li><a *ngIf="showParent" routerLink="/addparent"> Add Parent</a></li>
+            <div class="submenu">
+                <li><a *ngIf="showParent" routerLink="/parent">Parent List</a></li>
+                <li><a *ngIf="showParent" routerLink="/addparent"> Add Parent</a></li>
+            </div>
 
             <li><a (click)="showClass=!showClass" class="nav-link"><i class="fas fa-user-secret"></i>Class</a></li>
             <li><a *ngIf="showClass" routerLink="/class">All Classes</a></li>
@@ -34,7 +40,7 @@
     </mat-sidenav>
     <mat-sidenav-content>
         <mat-toolbar>
-            <div class="menu"><button class="fa fa-bars" aria-hidden="true" (click)="sidenav.toggle()">Awe</button></div>
+            <div class="menu"><button class="fa fa-bars" aria-hidden="true" (click)="sidenav.toggle()">Open</button></div>
         </mat-toolbar>
         <router-outlet></router-outlet>
     </mat-sidenav-content>

@@ -1,45 +1,62 @@
 <mat-tab-group>
-    <mat-tab label="All Students">
-        <div class="title">
-            <div class="head"><p>All Student</p></div>
-        </div>
-        <div class="route">
-            <p>Home <span> > All Student</span></p>
-        </div>
-        <div class="container-table">
-            <table>
-                <tr class="header" >
-                    <th>
-                        <p>Id</p>
-                    </th>
-                    <th>
-                        <p>Photo</p>
-                    </th>
-                    <th>
-                        <p>Name</p>
-                    </th>
-                    <th>
-                        <p>Gender</p>
-                    </th>
-                    <th>
-                        <p>Class</p>
-                    </th>
-                    <th>
-                        <p>Action</p>
-                    </th>
-                </tr>
-                <tr *ngFor="let data of students" mat>
-                    <td><p>{{data.id}}</p></td>
-                    <td><p><img src="{{data.image}}" alt="" width="50" height="50"></p></td>
-                    <td><p>{{data.first_name}} {{data.last_name}}</p></td>
-                    <td><p>{{data.gender}}</p></td>
-                    <td><p>{{data.kelas.class_name}}</p></td>
-                    <td><button>Edit</button><button>Delete</button></td>
-                    <!-- <td><p>{{data.address}}</p></td>
-                    <td><p>{{data.phone}}</p></td>
-                    <td><p>{{data.email}}</p></td> -->
-                </tr>
-            </table>
-        </div>
-    </mat-tab>
+  <mat-tab label="All Students">
+    <div class="title">
+      <div class="head"><p>All Student</p></div>
+    </div>
+    <div class="route">
+      <p>Home <span> > All Student</span></p>
+    </div>
+    <mat-expansion-panel
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+      *ngFor="let data of allStudent"
+      style="padding-bottom: 10px"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ data.first_name }} {{ data.last_name }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <tr>
+        <p>{{ data.id }}</p>
+      </tr>
+      <tr>
+        <p>{{ data.gender }}</p>
+      </tr>
+      <tr>
+        <p>{{ data.kelas.class_name }}</p>
+      </tr>
+    </mat-expansion-panel>
+  </mat-tab>
+
+  <mat-tab label="{{kls.class_name}}" *ngFor="let kls of kelas">
+    <div class="title">
+      <div class="head"><p>No</p></div>
+    </div>
+    <div class="route">
+      <p>Home <span> > gak All Student</span></p>
+    </div>
+    <mat-expansion-panel
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+      *ngFor="let data of student"
+      getAllStudentByClass(kls._id)
+      style="padding-bottom: 10px"
+    >
+      <mat-expansion-panel-header >
+        <mat-panel-title>
+          {{ data.first_name }} {{ data.last_name }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <tr>
+        <p>{{ data.id }}</p>
+      </tr>
+      <tr>
+        <p>{{ data.gender }}</p>
+      </tr>
+      <tr>
+        <p>{{ data.kelas.class_name }}</p>
+      </tr>
+    </mat-expansion-panel>
+  </mat-tab>
 </mat-tab-group>

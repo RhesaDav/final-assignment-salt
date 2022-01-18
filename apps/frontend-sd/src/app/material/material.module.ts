@@ -33,6 +33,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card'; 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -49,7 +50,8 @@ const MaterialComponents = [
   MatToolbarModule,
   MatCardModule,
   MatSnackBarModule,
-  MatTableModule
+  MatTableModule,
+  MatExpansionModule
 ];
 
 

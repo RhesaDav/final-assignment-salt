@@ -15,8 +15,8 @@ export class ClassComponent implements OnInit {
 
   constructor(private kelasService: KelasServices, private studentService: StudentService) { }
   kelas?: kelas[]
-  student?: Student
-
+  student?: Student[]=[]
+  
   ngOnInit(): void {
     this.kelasService.getAllClass().subscribe(result => {
       this.kelas= result

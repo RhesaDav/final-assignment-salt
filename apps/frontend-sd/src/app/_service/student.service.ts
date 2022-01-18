@@ -7,6 +7,11 @@ import { Student } from '../_models/student';
 
 const port = environment.port;
 
+export interface ranking {
+  nama: string
+  kelas: string
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -44,8 +49,8 @@ export class StudentService {
     );
   }
 
-  getAllStudentRelatedToTheClass(id:any): Observable<Student> {
-    return this.http.get<Student>(`${port}/api/student/getAllStudentRelatedToTheClass/${id}`)
+  getAllStudentRelatedToTheClass(id:any): Observable<Student[]> {
+    return this.http.get<Student[]>(`${port}/api/student/getAllStudentRelatedToTheClass/${id}`)
   }
   
 }
