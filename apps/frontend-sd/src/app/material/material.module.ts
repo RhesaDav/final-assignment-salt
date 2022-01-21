@@ -34,6 +34,10 @@ import {MatCardModule} from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatAutocompleteModule} from '@angular/material/autocomplete'; 
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort'
+
 
 const MaterialComponents = [
   MatButtonModule,
@@ -51,7 +55,10 @@ const MaterialComponents = [
   MatCardModule,
   MatSnackBarModule,
   MatTableModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatAutocompleteModule,
+  MatPaginatorModule,
+  MatSortModule
 ];
 
 

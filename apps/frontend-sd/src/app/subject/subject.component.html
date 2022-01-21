@@ -69,6 +69,9 @@
           <th>
             <p>Duration</p>
           </th>
+          <th>
+            <p>Action</p>
+          </th>
         </tr>
         <tr *ngFor="let data of subject">
           <td>
@@ -90,6 +93,10 @@
           </td>
           <td>
             <p>{{ data.duration }} menit</p>
+          </td>
+          <td>
+            <button>Delete</button>
+            <buttton>Edit</buttton>
           </td>
         </tr>
       </table>

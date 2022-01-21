@@ -10,6 +10,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarComponent } from './_shared/sidebar/sidebar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DetailStudentComponent } from './detail-student/detail-student.component';
+import { LoginComponent } from './login/login.component';
+import { ScoreInfoComponent } from './score-info/score-info.component';
+import { InfoComponent } from './_shared/info/info.component';
+import { CalendarComponent } from './_shared/calendar/calendar.component';
 
 const routes : Routes = [
   // {path:'', component:DashboardComponent},
@@ -19,7 +24,7 @@ const routes : Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent, DashboardComponent, SidebarComponent, ProfileComponent],
+  declarations: [AppComponent, NxWelcomeComponent, DashboardComponent, SidebarComponent, ProfileComponent, DetailStudentComponent, LoginComponent, ScoreInfoComponent, InfoComponent, CalendarComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
