@@ -1,15 +1,55 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { StudentService } from '../_services/student.service';
+
+interface gradeInterface {
+  'Subject Name': string;
+  score: number;
+}
 
 @Component({
-  selector: 'frontend-sd-score-info',
+  selector: 'app-score-info',
   templateUrl: './score-info.component.html',
   styleUrls: ['./score-info.component.css']
 })
 export class ScoreInfoComponent implements OnInit {
+  constructor(
+    private studentService: StudentService,
+    private route: ActivatedRoute
+  ) {}
 
-  constructor() { }
+  studentData: any[]=[];
+  idStudent: any;
+  displayedColumns: string[] = ['Subject Name', 'score'];
+  grades: gradeInterface[] = [];
+  grades2: gradeInterface[] = [];
 
   ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      params['idStudent'];
+
+      this.idStudent = params['idStudent'];
+    });
+    this._studentInit(this.idStudent);
   }
 
+  private _studentInit(id: any) {
+    this.studentService.getStudentByID(id).subscribe((res) => {
+      res.subject?.forEach((el: any) => {
+        this.studentData.push(el);
+      });
+      this.studentData.forEach((el) => {
+        this.grades2.push({
+          'Subject Name': el.subject_name.subject_name,
+          score: parseInt(el.score_subject),
+        });
+      });
+    });
+    setTimeout(() => {
+      this.grades = this.grades2;
+      console.log("all Grades",this.grades);
+      
+    }, 200);
+  }
 }

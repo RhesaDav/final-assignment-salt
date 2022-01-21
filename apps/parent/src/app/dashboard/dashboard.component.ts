@@ -2,9 +2,7 @@
 /* eslint-disable @angular-eslint/no-empty-lifecycle-method */
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { ParentService } from '../_services/parent.service';
-import { parent } from '../_models/parent';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,31 +10,21 @@ import { parent } from '../_models/parent';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  childData?: any[];
+  allData: any[] = [];
 
-  constructor(private parentService:ParentService, private route:ActivatedRoute) { }
+  constructor(private parentService: ParentService) { }
 
-  parentData: parent = {
-    _id : '',
-    first_name: '',
-    last_name: '',
-    gender: '',
-    child: [{
-      kelas : {
-        class_name: ''
-      }
-    }]
-  }
-  idParent : any
-
-  ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      this.idParent = [params['idParent']]
-      console.log('id parent', this.idParent[0])
-    })
-    this.parentService.getParentById(this.idParent[0]).subscribe(hasil => {
-      this.parentData = hasil
-      console.log('hasil:', hasil)
-    })
-  }
-
+  ngOnInit(): void { this.parentService
+    .getParentById('61e29a10f9e10e4f8ad8913d')
+    .subscribe((el) => {
+      this.childData = el.child;
+      console.log(this.childData);
+      // this.parentData.child?.forEach((el: any) => {
+      //   this.message.push({ message: el._id });
+      // });
+      // this.allData.push(this.parentData);
+      // this.allData.push(this.message);
+    });
+}
 }
