@@ -1,4 +1,4 @@
-export class parent {
+export class Parent {
     _id? : string
     first_name? : string
     last_name? : string
@@ -10,7 +10,12 @@ export class parent {
     address? : string
     phone? : string
     gender? : string
-    child! : [{
+    password? : string
+    image?: string
+    role?: string
+    status?: string
+    child? : [{
+        _id?: string
         first_name? : string
         last_name? : string
         gender? : string
@@ -18,6 +23,7 @@ export class parent {
         religion? : string
         email? : string
         phone? : string
+        image?: string
         kelas? : {
             class_name? : string
         }

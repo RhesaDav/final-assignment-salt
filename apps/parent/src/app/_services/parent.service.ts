@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
-import {parent} from '../_models/parent'
+import {Parent} from '../_models/parent'
 
 const port = environment.port
 
@@ -15,7 +15,18 @@ export class ParentService {
 
   constructor(private http:HttpClient) { }
 
-  getParentById(id:any): Observable<parent>{
-    return this.http.get<parent>(`${port}/api/parent/${id}`)
+  getParentById(id:any): Observable<Parent>{
+    return this.http.get<Parent>(`${port}/api/parent/${id}`)
+  }
+
+  editByParent(id: any, data: any): Observable<Parent> {
+    return this.http.put<Parent>(`${port}/api/parent/byparent/${id}`, data);
+  }
+  
+  editParentImageByParent(id: any, data: any): Observable<Parent> {
+    return this.http.put<Parent>(
+      `${port}/api/parent/byparent/image/${id}`,
+      data
+    );
   }
 }

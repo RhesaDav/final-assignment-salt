@@ -16,6 +16,7 @@
     "@angular/common": "~13.1.0",
     "@angular/compiler": "~13.1.0",
     "@angular/core": "~13.1.0",
+    "@angular/flex-layout": "^13.0.0-beta.36",
     "@angular/forms": "~13.1.0",
     "@angular/material": "^13.1.1",
     "@angular/platform-browser": "~13.1.0",
@@ -32,6 +33,7 @@
     "jspdf": "^2.5.0",
     "moment": "^2.29.1",
     "ng2-charts": "^3.0.6",
+    "ngx-spinner": "^13.0.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
