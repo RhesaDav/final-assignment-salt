@@ -1,0 +1,56 @@
+<div class="title">
+    <div class="head"><p>No</p></div>
+  </div>
+  <div class="route">
+    <p>Home <span> > gak All Student</span></p>
+  </div>
+  <div class="example-container mat-elevation-z8">
+  <mat-table [dataSource]="dataSource" matSort matSortStart="asc">
+          
+    <!-- ID Column -->
+    <ng-container matColumnDef="nama">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Nama </mat-header-cell>
+      <mat-cell *matCellDef="let Student"> {{student.first_name}} </mat-cell>
+    </ng-container>
+
+    <!-- Progress Column -->
+    <ng-container matColumnDef="matematika">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Matematika </mat-header-cell>
+      <mat-cell *matCellDef="let Student"> {{Student.first_name}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="fisika">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Fisika </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.gender}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="bahasaInggris">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Bahasa Inggris </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.gender}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="bahasaIndonesia">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Bahsa Indonesia </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.gender}} </mat-cell>
+    </ng-container>
+
+    <!-- Color Column -->
+    <!-- <ng-container matColumnDef="academicYear">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Year </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.year_academic}} </mat-cell>
+    </ng-container> -->
+
+    <!-- ID Column -->
+    <!-- <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.status}} </mat-cell>
+    </ng-container> -->
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    </mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5]"></mat-paginator>
+</div>

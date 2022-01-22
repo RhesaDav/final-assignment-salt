@@ -15,7 +15,7 @@ import { StudentService } from '../_service/student.service';
 })
 export class ClassComponent implements OnInit {
 
-  public displayedColumns : Student["kelas"]
+  public displayedColumns = ['nama','bInggris','bIndonesia']
 
   public dataSource = new MatTableDataSource<Student>()
 
@@ -26,7 +26,7 @@ export class ClassComponent implements OnInit {
   student?: Student[]=[]
   
   ngOnInit(): void {
-    this.getAllStudentRelatedToTheClass()
+    // this.getAllStudentRelatedToTheClass()
 
     this.kelasService.getAllClass().subscribe(result => {
       this.kelas= result
@@ -39,12 +39,12 @@ export class ClassComponent implements OnInit {
     // })
   }
 
-  public getAllStudentRelatedToTheClass = () => {
-    this.studentService.getAllStudentRelatedToTheClass('61dd65db591ae97754b4065c').subscribe(resultByClass => {
-      this.dataSource.data = resultByClass
-      console.log('Sini om',resultByClass)
-    })
-  }
+  // public getAllStudentRelatedToTheClass = () => {
+  //   this.studentService.getAllStudentRelatedToTheClass().subscribe(resultByClass => {
+  //     this.dataSource.data = resultByClass
+  //     console.log('Sini om',resultByClass)
+  //   })
+  // }
 
   ngAfterViweInit(): void {
     this.dataSource.paginator =this.paginator
