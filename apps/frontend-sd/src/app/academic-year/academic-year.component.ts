@@ -1,14 +1,13 @@
+/* eslint-disable @angular-eslint/use-lifecycle-interface */
+/* eslint-disable @typescript-eslint/member-ordering */
 /* eslint-disable @angular-eslint/no-empty-lifecycle-method */
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort'
-import { StudentService } from '../_service/student.service';
 import { Student } from '../_models/student';
+import { StudentService } from '../_service/student.service';
 
 @Component({
   selector: 'app-academic-year',
@@ -16,61 +15,33 @@ import { Student } from '../_models/student';
   styleUrls: ['./academic-year.component.css']
 })
 export class AcademicYearComponent implements OnInit {
-  displayedColumns = ['id', 'name', 'progress', 'color'];
-  dataSource: MatTableDataSource<Student>;
-  paginator : MatPaginator
-  
 
-  // @ViewChild(MatPaginator) paginator: MatPaginator;
+  public displayedColumns = ['id','name','gender', 'academicYear', 'status']
+  public dataSource = new MatTableDataSource<Student>()
+  public doFilter = (value:string) => {
+    this.dataSource.filter = value.trim().toLowerCase()
+  }
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  constructor(private studentService: StudentService) {}
-  studentData: Student 
- 
-     // Assign the data to the data source for the table to render
-    //  this.dataSource = new MatTableDataSource(users);
-   
+
+  constructor(private studentService:StudentService) {
+  }
 
   ngOnInit(): void {
-    this.studentService.getAllStudent().subscribe((allResult) => {
-      this.studentData = allResult;
-      console.log('all student:', this.studentData);
-    });
-
-    
-  
-
-  applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
-    this.dataSource.filter = filterValue;
-    
+    this.getAllStudent()
   }
-}
 
-/** Builds and returns a new User. */
-// function createNewUser(id: number): UserData {
-//   const name =
-//       NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-//       NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
+  public getAllStudent = () => {
+    this.studentService.getAllStudent().subscribe(resultStudent => {
+      this.dataSource.data = resultStudent
+      console.log('nih om',this.dataSource.data)
+    })
+  }
 
-//   return {
-//     id: id.toString(),
-//     name: name,
-//     progress: Math.round(Math.random() * 100).toString(),
-//     color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-//   };
-// }
-
-/** Constants used to fill up our data base. */
-// const COLORS = ['maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple',
-//   'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
-// const NAMES = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
-//   'Charlotte', 'Theodore', 'Isla', 'Oliver', 'Isabella', 'Jasper',
-//   'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'];
-
-export interface StudentData {
-  id: string;
-  first_name: string;
-  class_name: string;
-  academicYear: string;
+  ngAfterViewInit(): void {
+    this.dataSource.sort = this.sort
+    this.dataSource.paginator = this.paginator
+  }
+  
 }

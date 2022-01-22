@@ -1,17 +1,17 @@
 <div class="example-header">
   <mat-form-field class="search-form-field">
-    <input matInput [(ngModel)]="searchKey" placeholder="search by userName" (keyup)="applyFilter()">
+    <input matInput type="text" placeholder="search by userName/academic Year" (keyup)="doFilter($event.target.value)">
   </mat-form-field>
 </div>
 
 <div class="example-container mat-elevation-z8">
 
-  <mat-table [dataSource]="studentData" matSort>
+  <mat-table [dataSource]="dataSource" matSort matSortStart="asc">
 
     <!-- ID Column -->
     <ng-container matColumnDef="id">
       <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{row._id}} </mat-cell>
     </ng-container>
 
     <!-- Progress Column -->
@@ -21,15 +21,21 @@
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="progress">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Progress </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+    <ng-container matColumnDef="gender">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Gender </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.gender}} </mat-cell>
     </ng-container>
 
     <!-- Color Column -->
-    <ng-container matColumnDef="color">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Color </mat-header-cell>
-      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </mat-cell>
+    <ng-container matColumnDef="academicYear">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Year </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.year_academic}} </mat-cell>
+    </ng-container>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.status}} </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
