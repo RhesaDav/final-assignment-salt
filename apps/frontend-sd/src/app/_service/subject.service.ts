@@ -29,4 +29,8 @@ export class SubjectService {
   editSubject(id: any, data: subject): Observable<any> {
     return this.http.put<any>(`${port}/api/subject/${id}`, data);
   }
+
+  deleteSubject(id:any): Observable<any> {
+    return this.http.delete<any>(`${port}/api/subject/${id}`)
+  }
 }

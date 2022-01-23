@@ -15,22 +15,22 @@ import { StudentService } from '../_service/student.service';
 })
 export class ClassComponent implements OnInit {
 
-  public displayedColumns = ['nama','bInggris','bIndonesia']
+  // public displayedColumns = ['nama','bInggris','bIndonesia']
 
-  public dataSource = new MatTableDataSource<Student>()
+  // public dataSource = new MatTableDataSource<Student>()
 
-  @ViewChild(MatPaginator) paginator: MatPaginator
+  // @ViewChild(MatPaginator) paginator: MatPaginator
 
   constructor(private kelasService: KelasServices, private studentService: StudentService) { }
   kelas?: kelas[]
-  student?: Student[]=[]
+  student: Student[]=[]
   
   ngOnInit(): void {
     // this.getAllStudentRelatedToTheClass()
 
     this.kelasService.getAllClass().subscribe(result => {
       this.kelas= result
-      console.log(this.kelas)
+      console.log('diskelas',this.kelas)
     })
 
     // this.studentService.getAllStudentRelatedToTheClass('61dd65db591ae97754b4065c').subscribe(result => {
@@ -46,8 +46,8 @@ export class ClassComponent implements OnInit {
   //   })
   // }
 
-  ngAfterViweInit(): void {
-    this.dataSource.paginator =this.paginator
-  }
+  // ngAfterViweInit(): void {
+  //   this.dataSource.paginator =this.paginator
+  // }
 
 }

@@ -30,8 +30,8 @@
           <mat-form-field appearance="fill">
             <mat-label>Teacher</mat-label>
             <mat-select formControlName="teacher_id">
-              <mat-option value="{{data.teacher_id._id}}" *ngFor="let data of subject">{{
-                data.teacher_id._id
+              <mat-option value="{{data.teacher_id?._id}}" *ngFor="let data of subject">{{
+                data.teacher_id?._id
               }}</mat-option>
             </mat-select>
           </mat-form-field>
@@ -82,21 +82,21 @@
           </td>
           <td>
             <p>
-              {{ data.teacher_id.first_name }} {{ data.teacher_id.last_name }}
+              {{ data.teacher_id?.first_name }} {{ data.teacher_id?.last_name }}
             </p>
           </td>
           <td>
-            <p>{{ data.teacher_id.phone }}</p>
+            <p>{{ data.teacher_id?.phone }}</p>
           </td>
           <td>
-            <p>{{ data.teacher_id.email }}</p>
+            <p>{{ data.teacher_id?.email }}</p>
           </td>
           <td>
             <p>{{ data.duration }} menit</p>
           </td>
           <td>
-            <button>Delete</button>
-            <buttton>Edit</buttton>
+            <button (click)="deleteSubject(data._id)" >Delete</button>
+            <button routerLink="/subject/{{data._id}}">Edit</button>
           </td>
         </tr>
       </table>

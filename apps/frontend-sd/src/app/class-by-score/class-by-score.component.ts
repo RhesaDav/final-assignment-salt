@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { kelas } from '../_models/kelas';
 import { Student } from '../_models/student';
 import { StudentService } from '../_service/student.service';
 
@@ -17,12 +18,13 @@ export class ClassByScoreComponent implements OnInit {
   @ViewChild(MatPaginator) paginator:MatPaginator
 
   @Input() public parentData: any
-  student: Student[] = [] 
+  student: Student[]=[]
+  kelas: kelas[]=[]
 
   constructor(private studentService: StudentService) { }
 
   ngOnInit(): void {
-    this.studentService.getAllStudentRelatedToTheClass(this.parentData).subscribe((result) => {
+    this.studentService.getAllStudentRelatedToTheClass(this.student).subscribe((result) => {
       this.student = result
       console.log('muridny',this.student)
     })

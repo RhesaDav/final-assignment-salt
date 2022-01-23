@@ -1,5 +1,7 @@
+import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { subject } from '../_models/subject';
 import { SubjectService } from '../_service/subject.service';
 
@@ -11,17 +13,25 @@ import { SubjectService } from '../_service/subject.service';
 export class SubjectComponent implements OnInit {
 
   form!: FormGroup;
+  currentSubject = null
 
-  constructor(private subjectService: SubjectService, private formBuilder: FormBuilder) { }
-  subject : subject[]=[]
+  constructor(private subjectService: SubjectService, private formBuilder: FormBuilder, private route:ActivatedRoute) { }
+  subject : subject[]
 
   ngOnInit(): void {
     this.subjectService.getAllSubjects().subscribe(result => {
       this.subject= result
       console.log(this.subject)
+
     })
 
     this._formInit()
+  }
+
+  deleteSubject(id:any) {
+    this.subjectService.deleteSubject(id).subscribe(delResult => {
+      console.log(delResult)
+    })
   }
 
   private _formInit(){
